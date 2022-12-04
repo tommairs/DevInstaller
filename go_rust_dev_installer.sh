@@ -11,3 +11,11 @@ export PATH=$PATH:/usr/local/go/bin
 echo "export PATH=$PATH:/usr/local/go/bin" >>  /etc/profile
 go version
 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source ~/.profile
+source ~/.cargo/env
+rustc -V
+
+# Append to MOTD
+go version >>/etc/motd
+rustc -V  >>/etc/motd
